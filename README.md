@@ -1,6 +1,6 @@
-# Ecocycle — Projeto (frontend)
+# Ecocycle — Projeto (front-end)
 
-Este repositório contém a versão frontend do site Ecocycle, construída com Angular 17 (standalone components).
+Este repositório contém a versão front-end do site Ecocycle, construída com Angular 17 (standalone components).
 O README a seguir explica como rodar, desenvolver e resolver os problemas mais comuns que surgiram durante o desenvolvimento.
 
 ## Conteúdo deste README
