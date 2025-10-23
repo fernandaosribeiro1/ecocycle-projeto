@@ -1,0 +1,36 @@
+<div class="cadastro-screen">
+  
+  <div class="cadastro-form-side">
+    <div class="form-container">
+
+      <div class="logo">ecocycle</div>
+      
+      <h1 class="title">Cadastro</h1>
+      <p class="subtitle">
+        Já tem uma conta? 
+        <a class="link-login" [routerLink]="['/login']">Faça seu login</a>
+      </p>
+
+      <form class="cadastro-form">
+        
+        <label for="email">EMAIL</label>
+        <input id="email" type="email" placeholder="Seu email" required>
+        
+        <label for="senha">SENHA</label>
+        <input id="senha" type="password" placeholder="Sua senha" required>
+
+        <label for="resenha">REESCREVA SUA SENHA</label>
+        <input id="resenha" type="password" placeholder="Confirme sua senha" required>
+        
+        <button type="submit" class="cadastro-button" [routerLink]="['/']">
+            CRIAR UMA CONTA <span>&rarr;</span>
+        </button>
+      </form>
+      
+    </div>
+  </div>
+  
+  <div class="image-side">
+    <img src="assets/images/login-cadastro.png" alt="Folhas verdes escuras com gotas de água" class="cadastro-image">
+  </div>
+</div>

@@ -1,0 +1,134 @@
+/* src/app/parceiros-premium/parceiros-premium.component.scss - Versão IDÊNTICA AO FIGMA */
+
+$dark-bg: #111A13; 
+$text-light: white;
+
+.parceiros-section {
+    background-color: $dark-bg; 
+    color: $text-light;
+    padding: 100px 50px;
+    font-family: 'Geist', sans-serif;
+    text-align: center; /* Centraliza o título principal */
+}
+
+.container-parceiros {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ⬇️ CABEÇALHO ⬇️ */
+.parceiros-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.main-title {
+    font-weight: 500;
+    font-family: 'Geist Extrabold', sans-serif;
+    font-size: clamp(2.6rem, 5vw, 4.8rem);
+    margin-bottom: 40px; /* ajustado para visual mais compacto */
+    text-align: center;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* Alinha o botão com a parte inferior do subtítulo */
+    max-width: 1000px; /* Limita a largura do container */
+    margin: 0 auto;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.subtitle {
+    text-align: left;
+    font-family: 'Geist Extrabold', sans-serif;
+    font-size: clamp(1.6rem, 3.2vw, 2.6rem);
+    font-weight: 600;
+    line-height: 1.1;
+    margin: 0;
+    flex-grow: 1; /* Permite que o subtítulo ocupe a maior parte do espaço */
+
+    p {
+        margin: 0; /* Remove a margem padrão das tags <p> para ficarem juntas */
+    }
+}
+
+.parceiros-button {
+    display: inline-block;
+    color: $text-light;
+    text-decoration: none;
+    font-size: 1.4em;
+    padding: 8px 15px;
+    border: 1px solid $text-light;
+    transition: background-color 0.3s;
+    white-space: nowrap; 
+}
+
+.partners-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+/* ⬇️ GRID DE PARCEIROS (3 COLUNAS) ⬇️ */
+.parceiros-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 Colunas iguais */
+    gap: 30px;
+    text-align: left;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.parceiro-card {
+    display: block; /* Garante que o link ocupe todo o card */
+    text-decoration: none; /* Remove sublinhado do link <a> */
+    color: $text-light;
+}
+
+.parceiro-media img {
+    width: 100%;
+    height: auto;
+
+    display: block;
+}
+
+.parceiro-nome {
+    font-family: 'Geist Extrabold', sans-serif;
+    font-size: clamp(1rem, 2vw, 1.8rem);
+    font-weight: 500;
+    margin: 0;
+    color: #aca5a5;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* RESPONSIVIDADE BÁSICA */
+@media (max-width: 1050px) {
+    .header-content, .parceiros-grid {
+        max-width: 90%;
+    }
+}
+@media (max-width: 800px) {
+    .parceiros-grid {
+        grid-template-columns: 1fr; /* 1 coluna em telas menores */
+    }
+    .main-title {
+          font-weight: 600; 
+        font-size: 3em;
+    }
+    .subtitle {
+        font-size: 2em;
+    }
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .partners-button {
+        margin-top: 20px;
+    }
+}

@@ -1,0 +1,158 @@
+$dark-bg: #111A13;
+$text-color: #AAAAAA;
+$logo-color: #FFFFFF;
+
+.main-footer {
+  background-color: $dark-bg;
+  color: $text-color;
+  padding: 70px 50px 50px;
+  font-family: "Geist", sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  border-top: 1px solid #1a1a1a;
+  position: relative;
+  z-index: 100;
+  min-height: 140px;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+  }
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  flex-wrap: wrap;
+  text-align: left;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: translateY(-3px);
+  }
+}
+
+.footer-logo {
+  font-family: "Geist", sans-serif;
+  font-weight: 800;
+  font-size: 2.4em;
+  color: $logo-color;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+}
+
+/* Títulos com peso mais leve */
+h4 {
+  font-family: "Geist", sans-serif;
+  font-size: 1em;
+  font-weight: 500; /* 👈 menos grosso que antes */
+  color: $logo-color;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: $logo-color;
+    margin-top: 6px;
+    opacity: 0.4;
+  }
+}
+
+/* Links */
+.footer-col a {
+  font-family: "Geist", sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: $text-color;
+  text-decoration: none;
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: $logo-color;
+    background-color: rgba(255, 255, 255, 0.05);
+    transform: translateX(4px);
+  }
+}
+
+/* Ícones sociais */
+.social-links {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $text-color;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    &:hover {
+      border-color: $logo-color;
+      color: $logo-color;
+      transform: scale(1.1);
+      box-shadow: 0 0 6px rgba(255, 255, 255, 0.15);
+    }
+  }
+}
+
+/* Rodapé inferior */
+.footer-bottom {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 1rem;
+  font-family: "Geist", sans-serif; /* 👈 padronizando a fonte */
+  font-weight: 500;
+  color: $text-color;
+  opacity: 0.8;
+  letter-spacing: 0.5px;
+
+  /* ênfase leve no ano, mantendo a fonte padrão */
+  span.year {
+    font-weight: 500;
+    color: $logo-color;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-col {
+    margin-bottom: 30px;
+  }
+}

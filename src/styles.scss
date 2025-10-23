@@ -1,0 +1,38 @@
+/* src/styles.scss */
+
+/* 1. CONFIGURAÇÃO DA FONTE GEIST */
+@font-face {
+  /* Geist - peso Extrabold */
+  font-family: 'Geist';
+  src: url('/assets/fonts/Geist-Extrabold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  /* Geist - peso Regular/Medium */
+  font-family: 'Geist';
+  src: url('/assets/fonts/Geist-Regular.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+    margin: 0; 
+    padding: 0;
+    font-family: 'Geist', sans-serif; 
+    font-weight: 500; 
+    color: #fff; 
+}
+
+/* Segurança: evita que elementos com padding/width causem overflow horizontal */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Esconder overflow horizontal que pode aparecer por elementos posicionados ou larguras fixas */
+body {
+  overflow-x: hidden;
+}

@@ -1,0 +1,57 @@
+
+$header-bg: #204424; // Cor verde-claro da imagem
+$link-color: #333333;
+/* tamanho unificado para os itens do menu */
+$menu-font-size: 1.2rem; 
+
+.menu-fixo-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    right: 0;
+    
+    z-index: 999; /* Alto z-index, mas abaixo do Header Original (z-index: 1000) */
+    
+    background-color: $header-bg;
+    color: $link-color;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil para destacar do conteúdo */
+}
+
+.logo {
+    // Estilo Geist Extrabold, branco (como na imagem)
+    font-family: 'Geist Extrabold', sans-serif;
+    font-size: 1.25rem; /* ~20px, reduzido para ficar proporcional */
+    font-weight: 500;
+    color: white; 
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px; 
+
+    a {
+
+        color: white;
+        text-decoration: none;
+        font-family: 'Geist', sans-serif;
+        font-weight: 500;
+    font-size: $menu-font-size; /* já definido como 1rem */
+        line-height: 1;
+        transition: opacity 0.3s, transform 0.12s;
+
+        &:hover {
+            opacity: 0.85;
+            transform: translateY(-1px);
+        }
+    }
+}
+
+/* Ajuste responsivo: reduzir um pouco em telas pequenas */
+@media (max-width: 600px) {
+    .nav-links a { font-size: 0.95rem; }
+    .logo { font-size: 2.2em; }
+}

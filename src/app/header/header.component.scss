@@ -1,0 +1,45 @@
+.header-class { 
+    display: flex;
+    justify-content: space-between; // Espaça logo e links
+    align-items: center;
+    padding: 20px 50px; 
+    position: absolute; // Para ficar sobre o Hero/banner
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10; 
+    color: white; 
+}
+
+.logo {
+    font-family: 'Geist', sans-serif; 
+    font-size: var(--font-4xl); 
+    font-weight: 500; 
+    line-height: 1; 
+    letter-spacing: -1px; 
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+
+    .nav-item {
+        color: white;
+        text-decoration: none;
+        font-family: 'Geist', sans-serif;
+        font-weight: 500; 
+    font-size: var(--font-lg);
+        padding: 8px 15px; 
+        margin-left: 10px;
+        transition: opacity 0.3s;
+    }
+
+    .nav-item:last-child {
+        border: 1px solid white;
+    
+    }
+
+    .nav-item:hover {
+        opacity: 0.8;
+    }
+}

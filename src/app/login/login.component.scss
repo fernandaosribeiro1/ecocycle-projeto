@@ -1,0 +1,174 @@
+/* src/app/login/login.component.scss */
+
+$green-light: #C6D7C8; /* Cor de fundo do Header original (verde-claro) */
+$dark-text: #333333;
+$green-accent: #559955; /* Cor de destaque para links */
+$input-border: #999999; /* Cor de borda para inputs */
+
+.login-screen {
+    display: flex;
+    min-height: 100vh; /* Ocupa a altura total da tela */
+    width: 100vw; /* Ocupa a largura total da tela */
+    font-family: 'Geist', sans-serif;
+    /* ⬇️ GARANTIR QUE A BORDA PADRÃO DO NAVEGADOR NÃO ESTOURA ⬇️ */
+    box-sizing: border-box; 
+}
+
+/* -------------------------------------------------------- */
+/* ⬇️ LADO ESQUERDO: FORMULÁRIO (ALINHAMENTO SUPERIOR) ⬇️ */
+/* -------------------------------------------------------- */
+.login-form-side {
+    flex: 1; 
+    background-color: $green-light;
+    display: flex;
+    
+    /* ⬇️ CORREÇÃO DE ALINHAMENTO SUPERIOR (flex-start) ⬇️ */
+    align-items: flex-start; /* Alinha o conteúdo ao topo, não ao centro */
+    justify-content: center; /* Mantém centralizado horizontalmente */
+    
+    color: $dark-text;
+    
+    /* ⬇️ AJUSTE PARA EMPURRAR O CONTEÚDO PARA BAIXO E À DIREITA (CONSISTENTE COM O FIGMA) ⬇️ */
+    padding: 50px; /* Padding geral para o container */
+    padding-top: 15vh; /* Empurra o conteúdo para baixo a partir do topo */
+}
+
+.form-container {
+    width: 100%;
+    max-width: 400px;
+    text-align: left;
+}
+
+.logo {
+    font-family: 'Geist Extrabold', sans-serif;
+    font-size: 2.5em;
+    font-weight: 600;
+    color: $dark-text; 
+    margin-bottom: 50px;
+}
+
+.title {
+    font-size: 3em;
+    font-weight: 400;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-family: 'Geist', sans-serif; /* Garante que o Geist seja usado */
+    margin-bottom: 40px;
+    font-size: 1.1em;
+}
+
+.link-cadastro {
+    color: $dark-text;
+    font-weight: 200;
+    text-decoration: none;
+    border-bottom: 1px solid $dark-text;
+    transition: opacity 0.2s;
+    
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+/* ⬇️ ESTILOS DO FORMULÁRIO (COM PROPORÇÃO 1.2rem) ⬇️ */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+
+    label {
+        /* ⬇️ TIPOGRAFIA SOLICITADA ⬇️ */
+        font-family: 'Geist', sans-serif;
+        font-weight: 500;
+        font-size: 1.2rem; /* PROPORÇÃO SOLICITADA */
+        color: #555;
+        
+        margin-top: 20px;
+        margin-bottom: 5px;
+    }
+    
+    input {
+        /* ⬇️ TIPOGRAFIA SOLICITADA ⬇️ */
+        font-family: 'Geist', sans-serif;
+        font-weight: 500;
+        font-size: 1.2rem; /* PROPORÇÃO SOLICITADA */
+        
+        padding: 12px; /* Ajuste para o novo tamanho da fonte */
+        border: 1px solid $input-border;
+        border-radius: 4px;
+        box-sizing: border-box; /* Essencial para inputs */
+        
+        &:focus {
+            border-color: $dark-text;
+            outline: none;
+        }
+    }
+}
+
+.login-button {
+    background-color: transparent;
+    color: $dark-text;
+    border: 1px solid $dark-text;
+    
+    /* ⬇️ TIPOGRAFIA E ESTILO DO BOTÃO ⬇️ */
+    font-family: 'Geist', sans-serif;
+    font-size: 1.2rem; /* PROPORÇÃO SOLICITADA */
+    font-weight: 500;
+    
+    padding: 15px;
+    margin-top: 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    text-transform: uppercase;
+    
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+    }
+}
+
+.esqueci-senha {
+    font-family: 'Geist', sans-serif;
+    color: #555;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.2s;
+    
+    &:hover {
+        color: $dark-text;
+    }
+}
+
+/* -------------------------------------------------------- */
+/* ⬇️ LADO DIREITO: IMAGEM ⬇️ */
+/* -------------------------------------------------------- */
+.image-side {
+    flex: 1; 
+    overflow: hidden;
+}
+
+.login-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+}
+
+/* -------------------------------------------------------- */
+/* ⬇️ RESPONSIVIDADE ⬇️ */
+/* -------------------------------------------------------- */
+@media (max-width: 900px) {
+    .login-screen {
+        flex-direction: column; 
+    }
+    .image-side {
+        display: none; 
+    }
+    .login-form-side {
+        min-height: 100vh;
+        padding: 50px 20px; /* Padding para o formulário no celular */
+        padding-top: 10vh; /* Mantém o formulário no topo no celular */
+    }
+}

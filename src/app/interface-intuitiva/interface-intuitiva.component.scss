@@ -1,0 +1,174 @@
+/* src/app/interface-intuitiva/interface-intuitiva.component.scss */
+
+$dark-bg: #111A13; 
+$text-light: white;
+$check-color: #559955; 
+
+/* -------------------------------------------------------- */
+/* ESTILOS DA SEÇÃO PRINCIPAL (MOCKUP + FEATURES) - NÃO ALTERADOS */
+/* -------------------------------------------------------- */
+.interface-section {
+    background-color: $dark-bg;
+    color: $text-light;
+    padding: 200px 50px;
+    font-family: 'Geist', sans-serif;
+}
+
+.container-interface {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.app-image {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    display: block;
+}
+
+.main-title {
+    font-weight: 500;
+    font-family: 'Geist Extrabold', sans-serif;
+    font-size: 3.5em;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    font-size: 1.25em;
+    line-height: 4;
+}
+
+.feature-item {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+/* Container da Seção CTA (Corrige padding e garante centralização) */
+.cta-final-section {
+    width: 100%;
+    /* Mantendo o padding original que você me passou */
+    padding: 80px 50px 100px 50px;
+    background-color: $dark-bg; 
+    text-align: center;
+}
+
+.cta-container {
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+/* Wrapper da Imagem (Base para sobreposição) */
+.cta-image-wrapper {
+    position: relative;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    min-height: 220px;
+}
+
+/* ⬇️ Imagem de Fundo (Preenche e se Sobrepõe) ⬇️ */
+.cta-image-bg {
+    position: absolute;
+    inset: 0; /* top:0; right:0; bottom:0; left:0 */
+    width: 100%;
+    height: 100%;
+    max-height: 520px;
+    object-fit: cover; /* ESSENCIAL: Cobre o container sem distorcer */
+    display: block;
+    filter: brightness(0.6) blur(0.6px);
+    z-index: 0;
+}
+
+/* overlay escuro sobre a imagem para aumentar contraste do texto */
+.cta-image-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.55));
+    z-index: 1;
+}
+
+.cta-content-overlay {
+    position: absolute;
+    inset: 0; /* top:0; right:0; bottom:0; left:0 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 24px;
+    color: white;
+    z-index: 2;
+    text-align: center;
+}
+
+/* ⬇️ Tipografia e Margens do Texto (Para caber no banner) ⬇️ */
+.cta-title {
+    font-family: 'Geist Extrabold', sans-serif;
+    font-size: clamp(2.6rem, 6vw, 4rem);
+    line-height: 1.05;
+    margin: 0 0 8px 0;
+    color: #fff;
+    text-shadow: 0 8px 22px rgba(0,0,0,0.7);
+}
+
+.cta-subtitle {
+    font-size: clamp(0.9rem, 1.8vw, 1.2rem);
+    font-weight: 500;
+    color: #e6e6e6;
+    margin: 0;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+}
+
+/* ⬇️ Botão Abaixo do Banner (Estilo Glassmorphism) ⬇️ */
+.cta-button-wrapper {
+    margin-top: 80px; 
+    text-align: center; 
+}
+
+.cta-button {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 15px 30px;
+    
+    background-color: rgba(255, 255, 255, 0.06); 
+    border: 1px solid rgba(255, 255, 255, 0.25); 
+    backdrop-filter: blur(4px); 
+    
+    border-radius: 4px;
+    transition: background-color 0.25s ease, transform 0.15s ease;
+    font-weight: 500;
+    font-family: 'Geist', sans-serif;
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.15); 
+        transform: translateY(-1px);
+    }
+}
+
+@media (max-width: 900px) {
+    .container-interface {
+        grid-template-columns: 1fr; 
+        gap: 40px;
+    }
+    .col-mockup { order: 2; }
+    .col-features { order: 1; text-align: center; }
+    .main-title { text-align: center; }
+    .feature-list { text-align: center; }
+    .feature-item { justify-content: center; }
+}

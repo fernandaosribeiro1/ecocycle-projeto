@@ -1,0 +1,41 @@
+.hero-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.hero-header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 48px;
+}
+
+.hero-header .logo {
+  font-family: 'Geist', sans-serif;
+  color: #fff;
+  font-weight: 700;
+  font-size: 32px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+.hero-header .nav-links {
+  display: flex;
+  gap: 14px;
+}
+
+.hero-header .nav-item {
+  font-family: "Geist", sans-serif;
+    font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 12px;
+  font-size: 1.2rem;
+}
+
+.hero-header .nav-item.cta {
+  border: 1px solid rgba(255,255,255,0.95);
+  
+}

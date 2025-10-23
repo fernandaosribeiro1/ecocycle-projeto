@@ -1,0 +1,85 @@
+
+$green-dark: #111A13; 
+
+.como-funciona {
+    background-color: $green-dark; 
+    color: white;
+    padding: 100px 80px; 
+    text-align: center;
+    font-family: 'Geist', sans-serif;
+}
+
+.container-como-funciona {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+h2 {
+    font-family: 'Geist Extrabold', sans-serif;
+    font-size: clamp(2.4rem, 4vw, 4.8rem); /* maior e responsivo */
+    font-weight: 600; 
+    margin-bottom: 8px;
+}
+
+.subtitulo {
+    font-size: clamp(1.25rem, 2.2vw, 2rem);
+    color: #ccc;
+    margin-bottom: 60px;
+}
+
+/* ⬇️ ESTRUTURA DE GRID DE DUAS COLUNAS ⬇️ */
+.steps { /* Esta classe agora será o nosso Grid Container */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas iguais */
+    gap: 80px; /* Espaço entre as colunas */
+    margin-bottom: 40px;
+}
+
+.step {
+    /* Não precisa de background separado, pois o fundo da seção é suficiente */
+    padding-bottom: 30px; 
+}
+
+.step h3 {
+    font-family: 'Geist', sans-serif;
+    font-size: clamp(1.2rem, 2vw, 2rem);
+    font-weight: 600; /* destaque maior */
+    margin-bottom: 5px;
+}
+
+.step p {
+    font-size: clamp(1rem, 1.8vw, 1.4rem);
+    line-height: 1.6;
+    color: #ccc;
+}
+
+.partners-button {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    padding: 18px 35px;
+
+    background-color: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.25);
+    transition: background-color 0.25s ease, transform 0.15s ease;
+    backdrop-filter: blur(4px);
+    margin-top: 20px;
+}
+
+@media (max-width: 900px) {
+    .steps {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+        gap: 0;
+    }
+    .como-funciona {
+        padding: 60px 20px;
+    }
+    .partners-button {
+        display: block;
+        width: 100%;
+        max-width: 400px;
+        margin: 30px auto 0 auto;
+    }
+}
